@@ -119,7 +119,7 @@ Do nothing, continuing with the current code duplication.
 
 Same, but put configuration generators closer to packages.
 
-Many proposed solutions based on a siggnificant rework of the module system.
+Many proposed solutions based on a significant rework of the module system.
 
 Abstract generation of configuration files with package-like flat arguments and
 plain text file outputs.
