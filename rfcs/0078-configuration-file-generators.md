@@ -1,8 +1,12 @@
---- feature: configuration_file_generators start-date: 2020-10-18 author:
-Michael Raskin, @7c6f434c co-authors: (in-progress) shepherd-team: (names, to
-be nominated and accepted by RFC steering committee) shepherd-leader: (name to
-be appointed by RFC steering committee) related-issues: (will contain links to
-implementation PRs) ---
+---
+feature: configuration_file_generators
+start-date: 2020-10-18
+author: Michael Raskin @7c6f434c
+co-authors: (in-progress)
+shepherd-team: (names, to be nominated and accepted by RFC steering committee)
+shepherd-leader: (name to be appointed by RFC steering committee)
+related-issues: (will contain links to implementation PRs)
+---
 
 # Summary
 [summary]: #summary
