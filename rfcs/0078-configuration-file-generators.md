@@ -12,7 +12,7 @@ related-issues: (will contain links to implementation PRs)
 [summary]: #summary
 
 Provide the configuration file generation functionality separately from NixOS
-as a whole, and with scoped use of the module system.
+as a whole, and using the module system without the global namespace.
 
 # Motivation
 [motivation]: #motivation
@@ -48,11 +48,7 @@ This RFC proposal builds upon RFCs#42 defining a configuration file abstraction
 approach.
 
 A subtree is established in the Nixpkgs repository serving as a library of
-functions implementing program configuration file generation. .As the design
-uses a module system, putting configuration generators next to packages is also
-not a perfect solution; also a configuration generator might end up generating
-a set of config for a combination of packages.
-
+functions implementing program configuration file generation.
 Each such generator takes as an input a NixOS module system based «subtree»,
 e.g. the values typically bound to `cfg` variable in typical modules.
 
@@ -121,12 +117,16 @@ NixOS, and likely to create a medium-term situation of partial migration.
 
 Do nothing, continuing with the current code duplication.
 
-Same, but put configuration generators closer to packages.
+Same, but put configuration generators closer to packages. This would mean
+widespread use of the module system inside `pkgs/`. There is also no guarantee
+that all the configuration files describing interaction of multiple software
+packages will have a clear choice of reference package.
 
 Many proposed solutions based on a significant rework of the module system.
 
 Abstract generation of configuration files with package-like flat arguments and
-plain text file outputs.
+plain text file outputs. This approach will need less code as long as it we do
+not want type checks, or ease of overriding values.
 
 Implement a complete service abstraction not tied to global system-wide
 assumptions.
