@@ -122,7 +122,7 @@ widespread use of the module system inside `pkgs/`. There is also no guarantee
 that all the configuration files describing interaction of multiple software
 packages will have a clear choice of reference package.
 
-Many proposed solutions based on a significant rework of the module system.
+There also have been many solutions proposed based on a significant rework of the module system.
 
 Abstract generation of configuration files with package-like flat arguments and
 plain text file outputs. This approach will need less code as long as it we do
