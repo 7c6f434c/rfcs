@@ -47,17 +47,18 @@ source.
 This RFC proposal builds upon RFCs#42 defining a configuration file abstraction
 approach.
 
-A subtree is established in the Nixpkgs repository serving as a library of
-functions implementing program configuration file generation.
-Each such generator takes as an input a NixOS module system based «subtree»,
-e.g. the values typically bound to `cfg` variable in typical modules.
+A top-level directory is added to the Nixpkgs repository, and a library of
+functions implementing program configuration file generation is created within
+this directory.  Each such generator takes as an input a NixOS module system
+based attribute set «subtree», e.g. the attribute set typically bound to `cfg`
+variable in the current NixOS service modules.
 
 The output of each such function is an attribute set. The keys are relative
 file names of configuration files, and the values are attribute sets of RFCs#42
 settings abstraction and serialiser.
 
-Along with the function the corresponding type specifications for input and
-output modules are provided.
+The function is provided as a member of an attribute set, which also contains
+the corresponding type specifications for input and output modules are defined.
 
 In some cases we only provide low-level overridable default configuration. In
 this case the input may have the type that is always an empty attribute set,
