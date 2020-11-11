@@ -95,7 +95,7 @@ Output:
         greeting = {
           greeter = "localhost";
         };
-        payload =
+        payload = {
           value = "I say to you: ‘Hello’";
         };
       };
